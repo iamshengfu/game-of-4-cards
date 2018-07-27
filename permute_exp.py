@@ -20,14 +20,13 @@ print(permute(1, ["a","b","c"]))
 print(permute(2, ["a","b","c"]))                
                 
 def fourexp7(L):
-    if not L:
-        yield L
+    if L==0:
+        yield []
     else:
         for x in range(4):
-            for y in fourexp7(L[1:]):
+            for y in fourexp7(L-1):
                 yield [x]+y
 
-x=[1,1,1]  
-y=[1,2,3]
-M=len(list(fourexp7(x)))
+M=list(fourexp7(3))
+
 print (M)
